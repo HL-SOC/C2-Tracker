@@ -275,6 +275,9 @@ def shodan():
         os.remove(file.path)
 
     ip_set_from_all_products = set()
+    all_csv_file = open("data/all.csv", "a")
+    all_csv_file.write("IP,C2\n")
+    
     for product in queries:
         ip_set_from_product = set()
         product_ips_file = open(f"data/{product} IPs.txt", "a")
@@ -292,6 +295,7 @@ def shodan():
                 continue
         for ip in ip_set_from_product:
             product_ips_file.write(f"{ip}\n")
+            all_csv_file.write(f"{ip},{product}")
 
     all_ips_file = open("data/all.txt", "a")
     for ip in ip_set_from_all_products:
