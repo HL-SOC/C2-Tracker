@@ -28,7 +28,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run
       run: |
-        python3 -c 'from pathlib import Path; Path("/data").mkdir(parents=True, exist_ok=True)'
+        python3 -c 'from pathlib import Path; Path("data").mkdir(parents=True, exist_ok=True)'
         python3 tracker.py
       env:
         SHODAN_API_KEY: ${{ secrets.SHODAN_API_KEY }}
