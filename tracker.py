@@ -295,7 +295,7 @@ def shodan():
                 continue
         for ip in ip_set_from_product:
             product_ips_file.write(f"{ip}\n")
-            all_csv_file.write(f"{ip},{product}")
+            all_csv_file.write(f"{ip},{product}\n")
 
     all_ips_file = open("data/all.txt", "a")
     for ip in ip_set_from_all_products:
