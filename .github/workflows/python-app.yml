@@ -6,7 +6,7 @@ name: Run tracker.py
 on:
   push:
   schedule:
-    - cron:  '0 0,12 * * *'
+    - cron:  '35 */8 * * *'
 
 permissions:
   contents: write
